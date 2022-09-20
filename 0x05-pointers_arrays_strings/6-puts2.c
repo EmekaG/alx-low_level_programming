@@ -12,9 +12,9 @@ void puts2(char *str)
 	{
 		if ((a % 2) == 0)
 			_putchar(str[a]);
+		else
+			continue;
 	}
-	else
-		continue;
 	_putchar('\n');
 }
 
