@@ -5,7 +5,7 @@
  * @dest: a pointer to the string to be concatenated upon
  * @src: a source string to be appended to @dest
  *
- * Return: a pointer to the destinstion string
+ * Return: a pointer to the destinstion string @dest.
  */
 char *strcat(char *dest, const char *src)
 {
@@ -18,5 +18,6 @@ char *strcat(char *dest, const char *src)
 		dest[dest_lenght++] = src[index];
 
 	return (dest);
+}
 
 
