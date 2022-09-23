@@ -2,50 +2,28 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @str: the string to be encoded
+ * @s: the string to be encoded
  *
  * Return: A pointer to the encoded string
  */
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	int index1 = 0, index2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-		             'G', 'H', 'I', 'J', 'K', 'L',
-			     'M', 'N', 'O', 'P', 'Q', 'R',
-			     'S', 'T', 'U', 'V'. 'W', 'X',
-			     'Y', 'Z', 'a', 'b', 'c', 'd',
-			     'e', 'f', 'g', 'h', 'i', 'j',
-			     'k', 'l', 'm', 'n', 'o', 'p',
-			     'q', 'r', 's', 't', 'u', 'v',
-			     'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-		             'T', 'U', 'V', 'W', 'X', 'Y',
-			     'Z', 'A', 'B', 'C', 'D', 'E',
-			     'F', 'G', 'H', 'I', 'J', 'K',
-			     'L', 'M', 'n', 'o', 'p', 'q',
-			     'r', 's', 't', 'u', 'v', 'w',
-			     'x', 'y', 'z', 'a', 'b', 'c',
-			     'd', 'e', 'f', 'g', 'h', 'i',
-			     'j', 'k', 'l', 'm'};
+	int i, j;
 
-	while (str[index1])
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (index2 + 0; index2 < 52; index2++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (str[index1] == alphabet[index1])
+			if (s[i] == a[j])
 			{
-				str[index1] = rot13key[index];
+				s[i] = b[j];
 				break;
 			}
 		}
-
-		index1++;
 	}
 
-	reteurn (str);
+	return (s);
 }
-
-
-
-		  
-			     
