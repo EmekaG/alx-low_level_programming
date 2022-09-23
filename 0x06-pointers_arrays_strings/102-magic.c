@@ -10,14 +10,14 @@ int main(void)
 	p = &n;
 	/*
 	 * write the code here
-	 * Requirements:
-	 * - using a is not allowed
-	 * - not allowed to modify p
-	 * - one statement
-	 * - not allowed to code anything else
+	 * Remember:
+	 * - you are not allowed to use a
+	 * - you are not allowed to modify p
+	 * - only one statement
+	 * - you are not allowed to code anything else than this line of code
 	 */
 	*(p + 5) = 98;
-	/* prints 98\n */
+	/* ...so that this prints 98\n */
 	printf("a[2] = %d\n", a[2]);
 	return (0);
 }
