@@ -16,8 +16,8 @@ int square_root(int num, int root)
 	if (num == (root * root))
 		return (root);
 
-	else
-		return (-1);
+	else if (num / 2 == root)
+		return (-1)
 
 	return (square_root(num, root + 1));
 }
