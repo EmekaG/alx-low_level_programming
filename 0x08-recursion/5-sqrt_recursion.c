@@ -23,12 +23,12 @@ int square_root(int num, int root)
 }
 
 /**
- * sqrt_recursion - returns the natural root of a number
+ * _sqrt_recursion - returns the natural root of a number
  * @n: The number to return it's squareroot
  *
  * Return: the natural square root of n if it has otherwise -1
  */
-int sqrt_recursion(int n)
+int _sqrt_recursion(int n)
 {
 	int root = 0;
 
