@@ -3,7 +3,7 @@
 
 /*
  * file - 3-function_like_macro.h
- * description: header files that defines a function-like macro ABS(x)
+ * description: Header files that defines a function-like macro ABS(x)
  *              that computes the absolute value of a number x.
  */
 
