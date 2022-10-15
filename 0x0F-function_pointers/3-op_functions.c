@@ -7,7 +7,7 @@ int op_div(int a, int b);
 int op_mod(int a, int b);
 
 /**
- * op_add - adds integers
+ * op_add - adds integers and returns sum
  * @a: first integer to be added
  * @b: second integer to be added
  *
@@ -19,7 +19,7 @@ int op_add(int a, int b)
 }
 
 /**
- * op_sub - subtract integers
+ * op_sub - subtract integers and return result
  * @a: first integer to be substracted
  * @b: second integer to be substracted
  *
@@ -31,7 +31,7 @@ int op_sub(int a, int b)
 }
 
 /**
- * op_mul - multiplies integers
+ * op_mul - multiplies integers and return product
  * @a: first integer to be multiplied
  * @b: second integer to be multiplied
  *
@@ -43,7 +43,7 @@ int op_mul(int a, int b)
 }
 
 /**
- * op_div - divide both integers
+ * op_div - divide both integers and return result
  * @a: first integer to be divided
  * @b: second integer to be divided
  *

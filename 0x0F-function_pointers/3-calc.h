@@ -1,6 +1,12 @@
 #ifndef CALC_H
 #define CALC_H
 
+/*
+ * file: 3-calc.h
+ * desc: header file containing all structures and prototypes
+ *       for the 3-main.c project
+ */
+
 /**
  * struct op - a struct op
  * @op: the operator
