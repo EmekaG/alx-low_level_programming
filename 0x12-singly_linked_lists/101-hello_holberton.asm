@@ -8,7 +8,7 @@ main:
 
    mov rdi,fmt
    mov rsi,msg
-   mvo rax,0
+   mov rax,0
    call printf
 
    pop rbp
