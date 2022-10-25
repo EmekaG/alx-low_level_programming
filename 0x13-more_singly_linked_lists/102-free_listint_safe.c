@@ -1,6 +1,6 @@
 #include "lists.h"
 
-size_t loop_listint_len(listint_t *head);
+size_t looped_listint_len(listint_t *head);
 size_t free_listint_safe(listint_t **h);
 
 /**
@@ -11,7 +11,7 @@ size_t free_listint_safe(listint_t **h);
  * Return: 0 if the list is not looped else,
  *         the number of individual nodes in the list
  */
-size_t loop_listint_len(listint_t *head)
+size_t looped_listint_len(listint_t *head)
 {
 	listint_t *var_one, *var_two;
 	size_t nodes = 1;
@@ -62,7 +62,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp;
 	size_t nodes, index;
 
-	nodes = loop_listint_len(*h);
+	nodes = looped_listint_len(*h);
 
 	if (nodes == 0)
 	{
