@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * flip_bits -  returns the number of bits to be flipped to traverse between numbers
+ * flip_bits -  returns the number of bits to be flipped to
+ *              traverse between numbers
  * @n: the number
  * @m: the number traversed from n
  *
