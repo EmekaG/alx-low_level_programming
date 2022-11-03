@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <main.h>
+#include "main.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	if (oto == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 
-	while ((r = read(ofrom, buffer, 1024)) > 0);
+	while ((r = read(ofrom, buffer, 1024)) > 0)
 	{
 		buffer[r] = '\0';
 		
