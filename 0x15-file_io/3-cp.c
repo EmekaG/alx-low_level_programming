@@ -50,7 +50,6 @@ int main(int argc, char *argv[])
 	while ((r = read(ofrom, buffer, 1024)) > 0)
 	{
 		buffer[r] = '\0';
-		
 		w = write(oto, buffer, r);
 		if (w != r)
 		{
