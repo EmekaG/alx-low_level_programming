@@ -25,14 +25,14 @@ void close_elf(int elf);
  */
 void check_elf(unsigned char *e_ident)
 {
-	int i;
+	int index;
 
-	for (i = 0; i < 4; i++)
+	for (index = 0; index < 4; index++)
 	{
-		if (e_ident[i] != 127 &&
-		    e_ident[i] != 'E' &&
-		    e_ident[i] != 'L' &&
-		    e_ident[i] != 'F')
+		if (e_ident[index] != 127 &&
+		    e_ident[index] != 'E' &&
+		    e_ident[index] != 'L' &&
+		    e_ident[index] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
@@ -48,15 +48,15 @@ void check_elf(unsigned char *e_ident)
  */
 void print_magic(unsigned char *e_ident)
 {
-	int i;
+	int index;
 
 	printf("  Magic:   ");
 
-	for (i = 0; i < EI_NIDENT; i++)
+	for (index = 0; index < EI_NIDENT; index++)
 	{
-		printf("%02x", e_ident[i]);
+		printf("%02x", e_ident[index]);
 
-		if (i == EI_NIDENT - 1)
+		if (index == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -183,7 +183,7 @@ void print_osabi(unsigned char *e_ident)
 void print_abi(unsigned char *e_ident)
 {
 	printf("  ABI Version:                       %d\n",
-			e_ident[EI_ABIVERSION]);
+		e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -231,12 +231,14 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
-		e_entry = ((e_entry << 8) & 0xFF00FF00) | ((e_entry >> 8) & 0xFF00FF);
+		e_entry = ((e_entry << 8) & 0xFF00FF00) |
+			((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
+
 	else
 		printf("%#lx\n", e_entry);
 }
@@ -293,14 +295,15 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
+
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
 	print_class(header->e_ident);
 	print_data(header->e_ident);
 	print_version(header->e_ident);
-	print_abi(header->e_ident);
 	print_osabi(header->e_ident);
+	print_abi(header->e_ident);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
 
