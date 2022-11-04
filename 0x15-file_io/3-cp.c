@@ -1,9 +1,9 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 char *create_buffer(char *file);
-void close_fd(int fd);
+void close_file(int fd);
 
 /**
  * create_buffer - Allocates 1024 bytes for a buffer.
@@ -27,10 +27,10 @@ char *create_buffer(char *file)
 	return (buffer);
 }
 /**
- * close_fd - closes file descriptors
+ * close_file - closes file descriptors
  * @fd: the file descriptors to be closed
  */
-void close_fd(int fd)
+void close_file(int fd)
 {
 	int c;
 
@@ -94,8 +94,8 @@ int main(int argc, char *argv[])
 	} while (r > 0);
 
 	free(buffer);
-	close_fd(from);
-	close_fd(to);
+	close_file(from);
+	close_file(to);
 
 	return (0);
 }
